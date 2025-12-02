@@ -1,0 +1,39 @@
+info:
+  app:
+    description: '"Ecommerce Application order your needs or wants. A-Z all are
+            available here. Just explore and order."'
+    name: '"Ecom"'
+    version: 1.0.0
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: true
+spring:
+  application:
+    name: ecom
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecomdb?serverTimezone=Asia/Kolkata
+    username: tlsrk
+    password: ecompass
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+        TimeZone: Asia/Kolkata
+        globally_quoted_identifiers: true
+        globally_quoted_identifiers_skip_column_definitions: true
+    show-sql: true
